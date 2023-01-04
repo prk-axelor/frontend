@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td,th{
+            padding: 4px;
+        }
+        span{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form action="" onsubmit="" method="post" name="regform">
+        <center>
+            <h1>form</h1>
+            <table>
+                <tr>
+                <td>user:</td>
+                <td><input type="text" name="uname" placeholder="enter name"></td>
+                </tr>
+                <tr><td>password:</td>
+                <td><input type="password" name="password" placeholder="enter password" >
+                </td></tr>
+                <tr><td>
+                city of <br>employement:</td>
+                <td><input type="text" name="city" placeholder="enter city">
+                </td></tr> 
+                <tr>
+                <td>web server:</td>
+                <td><select id="server" name="server">
+                    <option value="server">--choose web-server--</option>
+                    <option value="value1">value1</option>
+                    <option value="value2">value2</option>
+                </td>
+                </tr>
+                <tr>
+                <td>please specify <br> your role:</td>
+                <td><span><input type="radio" name="rd" value="admin">admin</span>
+                <span><input type="radio" name="rd" value="engineer">engineer</span>
+                <span> <input type="radio" name="rd" value="guest">guest</span>
+                <span><input type="radio" name="rd" value="manager">manager</span>
+                </td>   
+                </tr>
+                <tr>
+                <td>single sign on <br>to the follwoing:</td>
+                <td><span><input type="checkbox" name="payroll" id="chk1">
+                payroll</span>
+                <span><input type="checkbox" name="mail" id="chk1">
+                mail</span>
+                <span><input type="checkbox" name="self service" id="chk1">
+                self-service</span></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                <td></td>
+                <td><input type="submit" value="submit">
+                    <input type="reset" value="reset"></td>
+                </tr>
+    </table>
+        </center>
+    </form>
+</body>
+</html>
