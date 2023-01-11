@@ -1,0 +1,18 @@
+.header{
+  padding: 50px;
+    background: #1abc9c;
+    color: white;
+}
+div{
+  font-size: 30px;
+}
+h4{
+  display: inline;
+}
+
+nav{
+      display: inline;
+      padding-left: 40em;
+     
+      color: black;
+}
