@@ -9,15 +9,17 @@ function Registrationform() {
     server: "",
   });
   const [postion, setPosition] = useState("admin");
-  //const[chk,setchk]=useState();
-  const [usererr, setErr] = useState("");
-  console.log(usererr);
-  function loginHandle(e) {
-    console.log("::", e);
-    e.preventDefault();
-    setErr("");
 
-    console.log(form);
+  const [usererr, setErr] = useState("");
+
+  function loginHandle(e) {
+    e.preventDefault();
+    if (!form.name) {
+      setErr("required");
+    }
+    if(form.passWord.length !== 8 || !form.passWord.match(/[0-9]/)) {
+      setErr("must have 8 charc and 1 digit");
+    }
   }
 
   function changeHandle(e) {
@@ -27,12 +29,7 @@ function Registrationform() {
       ...form,
       [name]: value,
     });
-    if (!form.name) {
-      setErr("required");
-    }
-    if (form.passWord.length !== 8 || !form.passWord.match(/[0-9]/)) {
-      setErr("must have 8 charc and 1 digit");
-    }
+    setErr("");
 
     setPosition(e.target.value);
   }
@@ -178,7 +175,9 @@ function Registrationform() {
                     <input type="reset" value="reset" />
                   </td>
                   <tr>
-                    <td>{form.name !== null && <p>{usererr}</p>}</td>
+                    <td>
+                      <p>{usererr}</p>
+                    </td>
                   </tr>
                 </tr>
               </tbody>
