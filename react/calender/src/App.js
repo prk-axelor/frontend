@@ -39,14 +39,15 @@ function App() {
   for (let i = 0; i < 35; i++) {
     if (i % days.length === 0) {
       rows.push(<tr></tr>);
-    }
-
+    } 
     if (i >= getFirstWeekday && day <= lastDate) {
       rows.push(<td key={i}>{day}</td>);
       day += 1;
-    } else {
+    }
+    else {
       rows.push(<td>{""}</td>);
     }
+    
   }
 
   return (

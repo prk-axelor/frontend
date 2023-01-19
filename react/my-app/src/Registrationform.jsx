@@ -27,7 +27,7 @@ function Registrationform() {
           <h1>form</h1>
           <table>
             <tbody>
-              <tr>
+               <tr>
                 <td>UserName:</td>
                 <td>
                   <input
