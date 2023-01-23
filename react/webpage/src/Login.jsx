@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Header() {
@@ -30,7 +30,18 @@ function Login() {
       localStorage.setItem("login", true);
       navigate("/");
     }
+    
+    
   }
+  useEffect(() => {
+    const login = localStorage.getItem("login");
+
+    if (login) {
+      navigate("/");
+     alert("already loggedin")
+    } 
+    
+  });
 
   function onChangehandle(e) {
     const name = e.target.name;

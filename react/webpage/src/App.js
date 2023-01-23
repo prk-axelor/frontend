@@ -7,6 +7,7 @@ import Protected from "./Protected";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 
+
 function App() {
   
   return (
@@ -16,14 +17,14 @@ function App() {
         <Link to="/Login">Login </Link>
         <Link to="/Contact">Contact </Link>
         <Link to="/About">About </Link>
-        <Routes>
+        <Routes >  
           <Route path="/" element={<Protected Component={Home} />}></Route>
 
-          <Route path="/Contact" element={<Contact />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
 
-          <Route path="/Login" element={<Login />}></Route>
+          <Route path="/login" element={<Protected Component={Login} />}></Route>
 
-          <Route path="/About" element={<About />}></Route>
+          <Route path="/about" element={<About />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
