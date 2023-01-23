@@ -34,9 +34,9 @@ function Login() {
     
   }
   useEffect(() => {
-    const login = localStorage.getItem("login");
+    const isLoggedin= localStorage.getItem("login");
 
-    if (login) {
+    if (isLoggedin) {
       navigate("/");
      alert("already loggedin")
     } 
