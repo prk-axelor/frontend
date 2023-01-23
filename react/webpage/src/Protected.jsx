@@ -7,13 +7,9 @@ function Protected(props) {
   useEffect(() => {
     const isLoggedin = localStorage.getItem("login");
 
-    
-      navigate(!isLoggedin ? '/login' : '/');
-    
-    
-  },[]);
-  
-  
+    navigate(!isLoggedin ? "/login" : "/");
+  }, []);
+
   return (
     <div>
       <Component />
