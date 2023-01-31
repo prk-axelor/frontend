@@ -12,7 +12,7 @@ function Contain({ addToCart, fruits, cartItems }) {
   let totalprice = 0;
   
 
- let total = cartItems.reduce((acc, item) => acc + item.rs * item.quantity, 0);
+ let total = cartItems.reduce((total,item) =>total+ item.rs * item.quantity, 0);
 
   return (
     <div className="App">
