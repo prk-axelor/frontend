@@ -10,9 +10,11 @@ import {
 
 function Contain({ addToCart, fruits, cartItems }) {
   let totalprice = 0;
-  
 
- let total = cartItems.reduce((total,item) =>total+ item.rs * item.quantity, 0);
+  let total = cartItems.reduce(
+    (total, item) => total + item.rs * item.quantity,
+    0
+  );
 
   return (
     <div className="App">
@@ -72,30 +74,32 @@ function Contain({ addToCart, fruits, cartItems }) {
                 </div>
               ) : (
                 <div>
-                  <ListGroup as="ol" numbered>
-                    {cartItems.map((fruit) => {
+                  <ListGroup as="ol">
+                    {cartItems.map((fruit, i) => {
                       return (
                         <ListGroup.Item
                           as="li"
                           className="d-flex justify-content-between align-items-start"
+                          key={i}
                         >
                           <div className="ms-2 me-auto">
-                            <div className="fw-bold">{fruit.name}</div>
+                            <div className="fw-bold">
+                              {i + 1}.{fruit.name}
+                            </div>
                             <p>
                               ₹{fruit.rs}x{fruit.quantity}
                             </p>
                           </div>
                           <Badge bg="primary" pill>
-                            {totalprice = fruit.rs * fruit.quantity}
+                            {(totalprice = fruit.rs * fruit.quantity)}
                           </Badge>
                         </ListGroup.Item>
                       );
                     })}
 
-                    <div
-                     
+                    <ListGroup.Item
+                      as="div"
                       className="d-flex justify-content-between align-items-center list-group-item"
-                      style={{ liststyle: "none" }}
                     >
                       <div className="ms-2 me-auto">
                         <div className="fw-bold">Net Total</div>
@@ -106,7 +110,7 @@ function Contain({ addToCart, fruits, cartItems }) {
                       >
                         {total}
                       </span>
-                    </div>
+                    </ListGroup.Item>
                   </ListGroup>
                 </div>
               )}

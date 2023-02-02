@@ -19,6 +19,7 @@ function Toastmessage({ show, setShow, toast }) {
                 alt=""
               />
               <strong className="me-auto">{toast}</strong>
+
               <small>just now</small>
             </Toast.Header>
             <Toast.Body>added successfully</Toast.Body>

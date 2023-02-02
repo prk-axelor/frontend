@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Contain from "./components/Contain";
 import Toastmessage from "./components/Toastmessage";
-//import Addtocart from "./components/Addtocart";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
@@ -47,12 +46,67 @@ function App() {
       rs: 20,
       imagename: "./Images/apple.jpeg",
     },
+    {
+      id: 7,
+      name: "red chilli",
+      rs: 10,
+      imagename: "./Images/red-chilly.jpeg",
+    },
+    {
+      id: 8,
+      name: "capcicum",
+      rs: 10,
+      imagename: "./Images/capcicum.jpeg",
+    },
+    {
+      id: 9,
+      name: "onion ",
+      rs: 20,
+      imagename: "./Images/onion.jpg",
+    },
+    {
+      id: 10,
+      name: "mashroom",
+      rs: 30,
+      imagename: "./Images/mashroom.png",
+    },
+    {
+      id: 11,
+      name: "guava",
+      rs: 10,
+      imagename: "./Images/guava.png",
+    },
+    {
+      id: 12,
+      name: "tomato",
+      rs: 15,
+      imagename: "./Images/tomato.png",
+    },
+    {
+      id: 13,
+      name: "brinjal",
+      rs: 10,
+      imagename: "./Images/brinjal.jpeg",
+    },
+    {
+      id: 14,
+      name: "broccoli",
+      rs: 30,
+      imagename: "./Images/broccoli.jpeg",
+    },
+    {
+      id: 15,
+      name: "carrot",
+      rs: 20,
+      imagename: "./Images/carrot.jpg",
+    },
   ];
 
   function addToCart(fruit) {
     setShow(true);
 
     var toast = fruit.name;
+
     setToast(toast);
 
     const productExist = cartItems.find((item) => item.id === fruit.id);
@@ -91,7 +145,6 @@ function App() {
       <Contain fruits={fruits} addToCart={addToCart} cartItems={cartItems} />
 
       <Toastmessage
-        cartItems={cartItems}
         fruits={fruits}
         setShow={setShow}
         show={show}

@@ -21,8 +21,15 @@ function TableRows({ children }) {
 function TableBody({ children }) {
   return <tbody>{children}</tbody>;
 }
+function Button({children}){
+  return <button>{children}</button>
+}
+
+
 
 function App() {
+  
+  
   const days = ["sun", "mon", "tues", "wed", "thus", "fri", "sat"];
   var date = new Date();
   var currentMonth = date.getMonth();
@@ -48,8 +55,24 @@ function App() {
       rows.push(<td>{""}</td>);
     }
     
+    
+     
   }
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function monthfunc(action) {
+    
+    if(action==="next"){
+      currentMonth = date.getMonth()+1;
+      
+    }
+   
+  
+  
+}
+  
 
+
+ 
   return (
     <>
       <Table>
@@ -61,7 +84,10 @@ function App() {
           </TableRows>
         </TableHeader>
         <TableBody>{rows}</TableBody>
+       
       </Table>
+      <Button onclick={monthfunc('prev')}>prev</Button>
+      <Button  onclick={monthfunc('next')}>next</Button>
     </>
   );
 }
