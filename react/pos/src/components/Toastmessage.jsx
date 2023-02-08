@@ -1,16 +1,16 @@
 import React from "react";
-import { ToastContainer, Row, Col, Toast } from "react-bootstrap";
+import { Toast } from "react-bootstrap";
 
-function Toastmessage({ show, setShow, toast }) {
+function Toastmessage({ list, handleToast }) {
   return (
-    <Row>
-      <Col xs={6}>
-        <ToastContainer position="top-end" className="p-3">
+    <>
+      {list.map((fruit, i) => {
+        return (
           <Toast
-            onClose={() => setShow(false)}
-            show={show}
-            delay={3000}
+            onClose={() => handleToast(fruit.id)}
+            delay={1000}
             autohide
+            key={i}
           >
             <Toast.Header>
               <img
@@ -18,15 +18,13 @@ function Toastmessage({ show, setShow, toast }) {
                 className="rounded me-2"
                 alt=""
               />
-              <strong className="me-auto">{toast}</strong>
-
-              <small>just now</small>
+              <strong className="me-auto">{fruit.name}</strong>
+              <small className="text-muted">just now</small>
             </Toast.Header>
-            <Toast.Body>added successfully</Toast.Body>
           </Toast>
-        </ToastContainer>
-      </Col>
-    </Row>
+        );
+      })}
+    </>
   );
 }
 

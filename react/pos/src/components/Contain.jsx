@@ -9,8 +9,6 @@ import {
 } from "react-bootstrap";
 
 function Contain({ addToCart, fruits, cartItems }) {
-  let totalprice = 0;
-
   let total = cartItems.reduce(
     (total, item) => total + item.rs * item.quantity,
     0
@@ -22,9 +20,9 @@ function Contain({ addToCart, fruits, cartItems }) {
         <Row>
           <Col sm={8} style={{ padding: 10 }}>
             <Row>
-              {fruits.map((fruit) => {
+              {fruits.map((fruit, index) => {
                 return (
-                  <Col md={2}>
+                  <Col md={2} key={index}>
                     <Card>
                       <Card.Body>
                         <Row>
@@ -64,7 +62,7 @@ function Contain({ addToCart, fruits, cartItems }) {
                 <div
                   style={{
                     fontSize: 30,
-                    padding: 0,
+
                     margin: 0,
                     backgroundColor: "whitesmoke",
                     padding: 30,
@@ -75,7 +73,7 @@ function Contain({ addToCart, fruits, cartItems }) {
               ) : (
                 <div>
                   <ListGroup as="ol">
-                    {cartItems.map((fruit, i) => {
+                    {cartItems.map((item, i) => {
                       return (
                         <ListGroup.Item
                           as="li"
@@ -84,14 +82,14 @@ function Contain({ addToCart, fruits, cartItems }) {
                         >
                           <div className="ms-2 me-auto">
                             <div className="fw-bold">
-                              {i + 1}.{fruit.name}
+                              {i + 1}.{item.name}
                             </div>
                             <p>
-                              ₹{fruit.rs}x{fruit.quantity}
+                              ₹{item.rs}x{item.quantity}
                             </p>
                           </div>
                           <Badge bg="primary" pill>
-                            {(totalprice = fruit.rs * fruit.quantity)}
+                            {item.rs * item.quantity}
                           </Badge>
                         </ListGroup.Item>
                       );
