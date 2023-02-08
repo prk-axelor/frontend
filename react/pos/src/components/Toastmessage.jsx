@@ -4,13 +4,13 @@ import { Toast } from "react-bootstrap";
 function Toastmessage({ list, handleToast }) {
   return (
     <>
-      {list.map((fruit, i) => {
+      {list.map((fruit) => {
         return (
           <Toast
             onClose={() => handleToast(fruit.id)}
             delay={1000}
             autohide
-            key={i}
+            key={fruit.id}
           >
             <Toast.Header>
               <img
@@ -21,6 +21,7 @@ function Toastmessage({ list, handleToast }) {
               <strong className="me-auto">{fruit.name}</strong>
               <small className="text-muted">just now</small>
             </Toast.Header>
+            <Toast.Body>added successfully</Toast.Body>
           </Toast>
         );
       })}

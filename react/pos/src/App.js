@@ -119,24 +119,22 @@ function App() {
 
   const handleToast = (id) => {
     const res = list.filter((l) => l.id !== id);
-    setList(res);
+    return setList(res);
   };
 
   function addToCart(fruit) {
     setList([...list, { id: Math.random(), name: fruit.name }]);
 
-    const productExist = cartItems.find((item) => item.id === fruit.id);
-    if (productExist) {
-      setCartItems(
-        cartItems.map((item) =>
-          item.id === fruit.id
-            ? { ...productExist, quantity: productExist.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setCartItems([...cartItems, { ...fruit, quantity: 1 }]);
-    }
+    setCartItems((cartItems) => {
+      const productExist = cartItems.find((item) => item.id === fruit.id);
+      if (productExist) {
+        return cartItems.map((item) =>
+          item.id === fruit.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        return [...cartItems, { ...fruit, quantity: 1 }];
+      }
+    });
   }
 
   return (

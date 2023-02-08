@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import {
   Container,
   Row,
@@ -9,9 +10,10 @@ import {
 } from "react-bootstrap";
 
 function Contain({ addToCart, fruits, cartItems }) {
-  let total = cartItems.reduce(
-    (total, item) => total + item.rs * item.quantity,
-    0
+  console.log({ cartItems });
+  let total = useMemo(
+    () => cartItems.reduce((total, item) => total + item.rs * item.quantity, 0),
+    [cartItems]
   );
 
   return (
