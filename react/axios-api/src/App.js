@@ -6,25 +6,25 @@ import ListItemText from "@mui/material/ListItemText";
 
 function App() {
   const [users, setUsers] = useState([]);
-  const apiget = async () => {
-    await axios.get("api/contacts").then((response) => setUsers(response.data));
+  const apiget = () => {
+    axios.get("api/contacts").then((response) => setUsers(response.data));
   };
   useEffect(() => {
     apiget();
   }, []);
-  console.log(users);
+
   return (
     <div className="App">
       {users.map((user) => {
         return (
-          <>
-            <ListItem alignItems="flex-start" key={user.id}>
+          <div key={user.id}>
+            <ListItem alignItems="flex-start">
               <ListItemText>{user.id}</ListItemText>
               <ListItemText>{user.firstName}</ListItemText>
               <ListItemText>{user.lastName}</ListItemText>
             </ListItem>
             <Divider variant="inset" />
-          </>
+          </div>
         );
       })}
     </div>

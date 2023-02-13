@@ -14,17 +14,16 @@ function App() {
 
   return (
     <div className="App">
-      <div>my api</div>
       {users.map((user) => {
         return (
-          <>
-            <ListItem alignItems="flex-start" key={user.id}>
+          <div key={user.id}>
+            <ListItem alignItems="flex-start">
               <ListItemText>{user.id}</ListItemText>
               <ListItemText>{user.firstName}</ListItemText>
               <ListItemText>{user.lastName}</ListItemText>
             </ListItem>
             <Divider variant="inset" />
-          </>
+          </div>
         );
       })}
     </div>
