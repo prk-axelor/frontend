@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
-import logo from './logo.png';
-
+import logo from "./logo.png";
 
 function Header(props) {
   return (
@@ -25,7 +24,11 @@ function Navbar({ children }) {
 }
 
 function NavLinks({ children }) {
-  return <a style={{ float: "right", padding: 5 }}>{children}</a>;
+  return (
+    <a href="/" style={{ float: "right", padding: 5 }}>
+      {children}
+    </a>
+  );
 }
 
 function Content({ children }) {

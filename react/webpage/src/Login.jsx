@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Header() {
@@ -30,17 +30,14 @@ function Login() {
       localStorage.setItem("login", true);
       navigate("/");
     }
-    
-    
   }
   useEffect(() => {
-    const isLoggedin= localStorage.getItem("login");
+    const isLoggedin = localStorage.getItem("login");
 
     if (isLoggedin) {
       navigate("/");
-     alert("already loggedin")
-    } 
-    
+      alert("already loggedin");
+    }
   });
 
   function onChangehandle(e) {

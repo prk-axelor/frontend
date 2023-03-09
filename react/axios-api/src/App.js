@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     apiget();
   }, []);
-
+  console.log(users);
   return (
     <div className="App">
       {users.map((user) => {
