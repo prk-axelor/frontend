@@ -1,0 +1,25 @@
+.header {
+ background-color: whitesmoke;
+ padding: 60px;    
+ font-size: 30px;   
+}
+.p{
+ 
+    display: inline;
+}
+.nav{
+    display: inline;
+}
+.div{
+    float: right;
+    padding: 5px;
+}
+.a{
+    margin-right: 20px;
+}
+.Container{
+    padding: 20px;
+}
+.Card{
+    width: 18rem;
+}
